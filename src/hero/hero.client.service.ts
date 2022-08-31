@@ -14,9 +14,9 @@ export class HeroClientService implements OnModuleInit {
     this.heroesService = this.client.getService<HeroesService>('HeroesService');
   }
 
-  getHero(): Observable<string> {
+  getHero(id: number): Observable<string> {
     console.log('get request from client')
-    return this.heroesService.findOne({ id: 1 });
+    return this.heroesService.findOne({ id: id });
   }
 
 }

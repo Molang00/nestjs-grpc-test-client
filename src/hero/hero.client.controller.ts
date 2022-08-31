@@ -6,8 +6,8 @@ import { HeroClientService } from './hero.client.service';
 export class HeroClientController {
   constructor(private readonly heroClientService: HeroClientService) {}
 
-  @Get('/heroes')
-  getHero(): Observable<any> {
-    return this.heroClientService.getHero();
+  @Get('/heroes/:id')
+  getHero(@Param('id') id: number): Observable<any> {
+    return this.heroClientService.getHero(id);
   }
 }
